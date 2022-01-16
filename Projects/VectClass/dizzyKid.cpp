@@ -1,12 +1,10 @@
-/******************************************************************************
-Patrick Aliberti
-
-testVect.cpp
-
-This program tests out the Vect class
-
-04/16/2021
-******************************************************************************/
+/**
+*	Patrick Aliberti
+*	dizzyKid.cpp
+*	04/16/2021
+*
+*	This program tests out the Vect class
+*/
 #include <cstdlib>
 #include <ctime>
 #include <iostream>

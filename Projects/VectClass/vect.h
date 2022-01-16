@@ -1,12 +1,10 @@
-/******************************************************************************
-Patrick Aliberti
-
-vect.h
-
-This program declares the Vect class
-
-04/12/2021
-******************************************************************************/
+/**
+*	Patrick Aliberti
+*	vect.h
+*	04/12/2021
+*
+*	This program specifies the Vect class
+*/
 #ifndef VECT_H
 #define VECT_H
 

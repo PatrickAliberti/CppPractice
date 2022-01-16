@@ -1,12 +1,12 @@
-/***************************************************************************************************
-Patrick Aliberti
-
-DeEncrypt.cpp
-
-This program de-encrypts the encrypted file
-
-04/17/2021
-****************************************************************************************************/
+/**
+*	Patrick Aliberti
+*
+*	DeEncrypt.cpp
+*
+*	This program de-encrypts the encrypted file
+*
+*	04/17/2021
+*/
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -59,13 +59,13 @@ int main()
 	return 0;
 }
 
-/****************************************************************************************************
-task:		Get the name of the input file
-
-data in:	No paramters, has the user input the file name
-
-data out:	Returns the valid file name that the user entered
-****************************************************************************************************/
+/**
+*	task:		Get the name of the input file
+*
+*	data in:	No paramters, has the user input the file name
+*
+*	data out:	Returns the valid file name that the user entered
+*/
 string getFileName()
 {
 	string filename;
@@ -106,13 +106,13 @@ string getFileName()
 	}
 }
 
-/****************************************************************************************************
-task:		Get the number of records in the file
-
-data in:	The name of the file
-
-data out:	The number of records in the file
-****************************************************************************************************/
+/**
+*	task:		Get the number of records in the file
+*
+*	data in:	The name of the file
+*
+*	data out:	The number of records in the file
+*/
 int getNumOfRecords(const string fileName)
 {
 	ifstream inFile(fileName, ios::in | ios::binary);
@@ -132,13 +132,13 @@ int getNumOfRecords(const string fileName)
 	return count;
 }
 
-/****************************************************************************************************
-task:		Read the data from the file into an array of structs
-
-data in:	The name of the file and the number of records
-
-data out:	A pointer to the array of structs
-****************************************************************************************************/
+/**
+*	task:		Read the data from the file into an array of structs
+*
+*	data in:	The name of the file and the number of records
+*
+*	data out:	A pointer to the array of structs
+*/
 Agent *readFileIntoArray(const string fileName, const int numOfAgents)
 {
 	ifstream inFile(fileName, ios::in | ios::binary);
@@ -163,13 +163,13 @@ Agent *readFileIntoArray(const string fileName, const int numOfAgents)
 	return agentArray;
 }
 
-/****************************************************************************************************
-task:		Displays the contents from the dynamic array of structures
-
-data in:	The dynamic array of structs and the number of records
-
-data out:	No return value, displays the contents of the array of structs
-****************************************************************************************************/
+/**
+*	task:		Displays the contents from the dynamic array of structures
+*
+*	data in:	The dynamic array of structs and the number of records
+*
+*	data out:	No return value, displays the contents of the array of structs
+*/
 void displayArray(const Agent *agentArr, const int numOfAgents)
 {
 	cout << "\n|==================================================================|";
@@ -193,13 +193,13 @@ void displayArray(const Agent *agentArr, const int numOfAgents)
 	cout << "|==================================================================|\n";
 }
 
-/****************************************************************************************************
-task:		Gets the encryption key from the user
-
-data in:	No parameters, asks the user for the encryption key
-
-data out:	Returns the encryption key
-****************************************************************************************************/
+/**
+*	task:		Gets the encryption key from the user
+*
+*	data in:	No parameters, asks the user for the encryption key
+*
+*	data out:	Returns the encryption key
+*/
 int getKey()
 {
 	int key;
@@ -209,13 +209,13 @@ int getKey()
 	return key;
 }
 
-/****************************************************************************************************
-task:		De-encrypts the contents from the array
-
-data in:	The number of records and the key
-
-data out:	The encrypted dynamic array
-****************************************************************************************************/
+/**
+*	task:		De-encrypts the contents from the array
+*
+*	data in:	The number of records and the key
+*
+*	data out:	The encrypted dynamic array
+*/
 Agent *deEncryptArray(Agent *deEncryptArr, const int numOfAgents, const int key)
 {
 	

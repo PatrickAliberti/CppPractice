@@ -1,4 +1,10 @@
-// This  program demonstrates the recursive binary search function
+/**
+*	Patrick Aliberti
+*	recursiveBinarySearch.cpp
+*	12/30/2020
+*
+*	This  program demonstrates the recursive binary search function
+*/
 #include <iostream>
 using namespace std;
 

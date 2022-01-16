@@ -1,3 +1,8 @@
+/**
+*	Patrick Aliberti
+*	0-0_Template_SFML.cpp
+*	01/16/2022
+*/
 #include <iostream>
 
 #include "SFML/Graphics.hpp"

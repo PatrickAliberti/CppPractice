@@ -1,8 +1,13 @@
-// This program demonstrates the linear search algorithm
+/**
+*	Patrick Aliberti
+*	linearSearch.cpp
+*	12/10/2020
+*
+*	This program demonstrates the linear search algorithm
+*/
 #include <iostream>
 using namespace std;
 
-// Function Prototype
 int linearSearch(const int[], int, int);
 
 int main()
@@ -28,6 +33,13 @@ int main()
 	return 0;
 }
 
+/**
+*	task:		perform the linear search
+* 
+*	parameters:	a const integer array, the size of the array, and the value being searched for
+* 
+*	returns:	nothing
+*/
 int linearSearch(const int arr[], int size, int value)
 {
 	int index = 0;

@@ -1,3 +1,10 @@
+/**
+*	Patrick Aliberti
+*	0-4_VertexArrays_SFML.cpp
+*	01/16/2022
+* 
+*	This program creates a square and a line using sf::VertexArray
+*/
 #include <iostream>
 
 #include "SFML/Graphics.hpp"
@@ -7,6 +14,7 @@
 int main() {
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML Test");
 
+	// Square
 	sf::VertexArray quad(sf::Quads, 4);
 
 	quad[0].position = sf::Vector2f(5, 5);
@@ -16,7 +24,7 @@ int main() {
 
 	sf::Texture texture;
 
-	if (!texture.loadFromFile("index.jpeg")) {
+	if (!texture.loadFromFile("TestImages/index.jpeg")) {
 		std::cout << "ERROR" << std::endl;
 	}
 
@@ -25,6 +33,7 @@ int main() {
 	quad[2].texCoords = sf::Vector2f(50, 100);
 	quad[3].texCoords = sf::Vector2f(0, 100);
 
+	// Line
 	sf::VertexArray line(sf::Lines, 2);
 
 	line[0].position = sf::Vector2f(5, 205);

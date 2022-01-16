@@ -1,3 +1,10 @@
+/**
+*	Patrick Aliberti
+*	0-2_Events_SFML.cpp
+*	01/16/2022
+* 
+*	This program demonstrates a simple event handle
+*/
 #include <iostream>
 
 #include "SFML/Graphics.hpp"

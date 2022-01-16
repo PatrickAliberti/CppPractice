@@ -1,5 +1,10 @@
-// This program demostrates a recursive function
-// that calculates Fibonacci numbers
+/**
+*	Patrick Aliberti
+*	fibonacci.cpp
+*	12/29/2020
+* 
+*	This program demostrates a recursive function that calculates Fibonacci numbers
+*/
 #include <iostream>
 using namespace std;
 

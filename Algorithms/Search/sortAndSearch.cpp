@@ -1,23 +1,19 @@
-/**********************************************************************
-program:	sortAndSearch.cpp
-date:       12/14/2020
-author:     G.Panczner
-purpose:	This program loads an array with random numbers from 1-20,
-			then displays the contents of the array. It then sorts the
-			array and outputs and outputs 2 columns. 1) showing a list
-			of the distinct array elements and 2) showing a count of
-			the number of occurances of each element
-**********************************************************************/
+/**
+*	Patrick Aliberti
+*	sortAndSearch.cpp
+*	12/11/2020
+*
+*	This program loads an array with random numbers from 1-20, then displays the contents of the array. It then sorts the array and outputs and outputs 2 columns. The
+*	first column shows a list of the distinct array elements and the second shows a count of the number of occurances of each element
+*/
 #include <iostream>
 #include <iomanip>
 #include <ctime>
 #include <cstdlib>
 using namespace std;
 
-// Global constants
 const int SIZE = 50;
 
-// Function prototypes
 void display_array(const int number_list[]);
 void display_frequency(const int number_list[]);
 void load_array(int number_list[]);
@@ -44,7 +40,14 @@ int main()
 	
 	return 0;
 }
-////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		display the array
+* 
+*	parameters: a const integer array
+* 
+*	returns:	nothing
+*/
 void display_array(const int number_list[])
 {
 	cout << "Number List:\n";
@@ -54,7 +57,14 @@ void display_array(const int number_list[])
 	}
 	cout << endl;
 }
-////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		display the frequency of each number in the array
+*
+*	parameters: a const integer array
+*
+*	returns:	nothing
+*/
 void display_frequency(const int number_list[])
 {
 	int count = 0;
@@ -78,7 +88,14 @@ void display_frequency(const int number_list[])
 	}
 	cout << endl;
 }
-////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		load the array with random values
+*
+*	parameters: an integer array
+*
+*	returns:	nothing
+*/
 void load_array(int number_list[])
 {
 	for (int index = 0; index < SIZE; index++)
@@ -87,7 +104,14 @@ void load_array(int number_list[])
 	}
 	cout << endl;
 }
-////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		sort the array
+*
+*	parameters: an integer array
+*
+*	returns:	nothing
+*/
 void sort_array(int number_list[])
 {
 	int minIndex, minValue;
@@ -110,7 +134,14 @@ void sort_array(int number_list[])
 	}
 	cout << endl;
 }
-////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		swap two variables
+*
+*	parameters: references to the two variables
+*
+*	returns:	nothing
+*/
 void swap(int &a, int &b)
 {
 	int temp = a;

@@ -1,12 +1,10 @@
-/******************************************************************************
-Patrick Aliberti
-
-vect.cpp
-
-This program implements the Vect class
-
-04/12/2021
-******************************************************************************/
+/**
+*	Patrick Aliberti
+*	Vect.cpp
+*	04/12/2021
+*
+*	This program implements the Vect class
+*/
 #include <iostream>
 #include <cmath>
 #include "vect.h"

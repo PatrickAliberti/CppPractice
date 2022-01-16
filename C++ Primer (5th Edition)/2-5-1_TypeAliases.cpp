@@ -4,7 +4,7 @@
 *	2.5.1 - Type Aliases
 * 
 *	p. 67 - "A type alias is a name that is a synonm for another type. Type aliases let us simplify complicated type definitions, making those types easire to use.
-			Type aliases also let us emphasize the purpose for which a type is used."
+*			Type aliases also let us emphasize the purpose for which a type is used."
 */
 int main() {
 	// Define a type alias using typedef

@@ -1,9 +1,15 @@
+/**
+*	Patrick Aliberti
+*	binarySearch.cpp
+*	12/10/2020
+*
+*	This program demonstrates the binary search
+*/
 #include <iostream>
 using namespace std;
 
 const int SIZE = 20;
 
-// function prototype
 int binarySearch(const int [], int size, int value);
 
 int main()
@@ -36,7 +42,14 @@ int main()
 	}
 	return 0;
 }
-///////////////////////////////////////////////////////////////
+
+/**
+*	task:		perform the binary search
+* 
+*	parameters: a const integer array, the size of the array, and the value being searched for
+* 
+*	returns:	the position in the array of the value being searched for
+*/
 int binarySearch(const int array [], int size, int value)
 {
 	int first = 0,

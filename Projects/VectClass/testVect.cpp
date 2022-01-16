@@ -1,12 +1,10 @@
-/******************************************************************************
-Patrick Aliberti
-
-testVect.cpp
-
-This program tests out the Vect class
-
-04/12/2021
-******************************************************************************/
+/**
+*	Patrick Aliberti
+*	testVect.cpp
+*	04/12/2021
+* 
+*	This program tests out the Vect class
+*/
 #include <iostream>
 #include "vect.h"
 using namespace std;

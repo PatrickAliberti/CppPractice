@@ -1,14 +1,11 @@
-/***************************************************************************************************
-Patrick Aliberti
-
-Encrypt.cpp
-
-This program reads data from a binary file into a dynamic array of structs. It then copys the
-encrypted data into another dynamic array which then gets written into another binary file. 
-
-04/17/2021
-****************************************************************************************************/
-#include <fstream>
+/**
+*	Patrick Aliberti
+*	Encrypt.cpp
+*	04/17/2021
+* 
+*	This program reads data from a binary file into a dynamic array of structs. It then copys the encrypted data into another dynamic array which then gets written
+*	into another binary file. 
+*/
 #include <iomanip>
 #include <iostream>
 #include <string.h>
@@ -78,13 +75,13 @@ int main()
 	return 0;
 }
 
-/****************************************************************************************************
-task:		Get the name of the input file
-
-data in:	No paramters, has the user input the file name
-
-data out:	Returns the valid file name that the user entered
-****************************************************************************************************/
+/**
+*	task:		Get the name of the input file
+* 
+*	data in:	No paramters, has the user input the file name
+* 
+*	data out:	Returns the valid file name that the user entered
+*/
 string getInFileName()
 {
 	string filename;
@@ -125,13 +122,13 @@ string getInFileName()
 	}
 }
 
-/****************************************************************************************************
-task:		Get the number of records in the file
-
-data in:	The name of the file
-
-data out:	The number of records in the file
-****************************************************************************************************/
+/**
+*	task:		Get the number of records in the file
+*
+*	data in:	The name of the file
+*
+*	data out:	The number of records in the file
+*/
 int getNumOfRecords(const string fileName)
 {
 	ifstream inFile(fileName, ios::in | ios::binary);
@@ -151,13 +148,13 @@ int getNumOfRecords(const string fileName)
 	return count;
 }
 
-/****************************************************************************************************
-task:		Read the data from the file into an array of structs
-
-data in:	The name of the file and the number of records
-
-data out:	A pointer to the array of structs
-****************************************************************************************************/
+/**
+*	task:		Read the data from the file into an array of structs
+*
+*	data in:	The name of the file and the number of records
+*
+*	data out:	A pointer to the array of structs
+*/
 Agent *readFileIntoArray(const string fileName, const int numOfAgents)
 {
 	ifstream inFile(fileName, ios::in | ios::binary);
@@ -182,13 +179,13 @@ Agent *readFileIntoArray(const string fileName, const int numOfAgents)
 	return agentArray;
 }
 
-/****************************************************************************************************
-task:		Displays the contents from the dynamic array of structures
-
-data in:	The dynamic array of structs and the number of records
-
-data out:	No return value, displays the contents of the array of structs
-****************************************************************************************************/
+/**
+*	task:		Displays the contents from the dynamic array of structures
+*
+*	data in:	The dynamic array of structs and the number of records
+*
+*	data out:	No return value, displays the contents of the array of structs
+*/
 void displayAgentArray(const Agent *agentArr, const int numOfAgents)
 {
 	cout << "\n|==================================================================|";
@@ -212,13 +209,13 @@ void displayAgentArray(const Agent *agentArr, const int numOfAgents)
 	cout << "|==================================================================|\n";
 }
 
-/****************************************************************************************************
-task:		Gets the encryption key from the user
-
-data in:	No parameters, asks the user for the encryption key
-
-data out:	Returns the encryption key
-****************************************************************************************************/
+/**
+*	task:		Gets the encryption key from the user
+*
+*	data in:	No parameters, asks the user for the encryption key
+*
+*	data out:	Returns the encryption key
+*/
 int getKey()
 {
 	int key;
@@ -228,13 +225,13 @@ int getKey()
 	return key;
 }
 
-/****************************************************************************************************
-task:		Copys the encrypted contents of the origional dynamic array into a new dynamic array
-
-data in:	The origional dynamic array, the number of records, and the key
-
-data out:	The encrypted dynamic array
-****************************************************************************************************/
+/**
+*	task:		Copys the encrypted contents of the origional dynamic array into a new dynamic array
+*
+*	data in:	The origional dynamic array, the number of records, and the key
+*
+*	data out:	The encrypted dynamic array
+*/
 Agent *copyEncryptArray(Agent *agentArr, const int numOfAgents, const int key)
 {
 	Agent *encryptArr = new Agent[numOfAgents];
@@ -266,14 +263,14 @@ Agent *copyEncryptArray(Agent *agentArr, const int numOfAgents, const int key)
 	return encryptArr;
 }
 
-/****************************************************************************************************
-task:		Gets the name of the encrytion file if the user want to create one
-
-data in:	No parameters, asks the user if they want an encrytion file, and if yes, user enters the
-			name of the file
-
-data out:	Returns name of the encryption file
-****************************************************************************************************/
+/**
+*	task:		Gets the name of the encrytion file if the user want to create one
+*
+*	data in:	No parameters, asks the user if they want an encrytion file, and if yes, user enters the
+*				name of the file
+*
+*	data out:	Returns name of the encryption file
+*/
 string getEncryptFile()
 {
 	string encryptFileName;
@@ -306,15 +303,15 @@ string getEncryptFile()
 	return encryptFileName;
 }
 
-/****************************************************************************************************
-task:		Writes the contents of the encrypted dynamic array into a file. Tells user if transfer
-			was successful and the name of the encryption file
-
-data in:	The encrypted dynamic array and the size of the array
-
-data out:	No return value, creates encrypted file and displays if transfer was successful and the 
-			name of the encryption file
-****************************************************************************************************/
+/**
+*	task:		Writes the contents of the encrypted dynamic array into a file. Tells user if transfer
+*				was successful and the name of the encryption file
+*
+*	data in:	The encrypted dynamic array and the size of the array
+*
+*	data out:	No return value, creates encrypted file and displays if transfer was successful and the 
+*				name of the encryption file
+*/
 void writeArrayIntoFile(Agent *encryptArr, const int numOfAgents, const string fileName)
 {
 	ofstream outFile(fileName, ios::out | ios::binary);

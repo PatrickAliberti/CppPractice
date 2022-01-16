@@ -1,8 +1,13 @@
-// This program demonstrates the bubble sort algorithm
+/**
+*	Patrick Aliberti
+*	bubbleSort.cpp
+*	12/6/2020
+*
+*	This program demonstrates the bubble sort algorithm
+*/
 #include <iostream>
 using namespace std;
 
-// Function prototype
 void bubbleSort(int[], int);
 void swap(int &, int &);
 
@@ -34,7 +39,14 @@ int main()
 	
 	return 0;
 }
-//////////////////////////////////////////////////////////////
+
+/**
+*	task:		perform the bubble sort
+* 
+*	parameters:	an integer array and the size of the array
+* 
+*	returns:	nothing
+*/
 void bubbleSort(int array[], int size)
 {
 	int maxElement;
@@ -51,7 +63,14 @@ void bubbleSort(int array[], int size)
 		}
 	}
 }
-//////////////////////////////////////////////////////////////
+
+/**
+*	task:		swap two variables
+*
+*	parameters:	integer references to each variable
+*
+*	returns:	nothing
+*/
 void swap(int &a, int &b)
 {
 	int temp = a;

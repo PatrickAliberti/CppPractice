@@ -1,15 +1,18 @@
-// This program randomly fills an array, sorts it in descending order
-// then displays a chart showing the frequency for each number
+/**
+*	Patrick Aliberti
+*	frequencyPractice.cpp
+*	12/11/2020
+* 
+*	This program randomly fills an array, sorts it in descending order then displays a chart showing the frequency for each number
+*/
 #include <cstdlib>
 #include <ctime>
 #include <iomanip>
 #include <iostream>
 using namespace std;
 
-// Global constants
 const int SIZE = 50;
 
-// Function prototypes
 void load_array(int list[]);
 void sort_array(int list[]);
 void display_array(const int list[]);
@@ -27,14 +30,28 @@ int main()
 	
 	return 0;
 }
-///////////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		Randomly fill array
+* 
+*	parameters: an integer array
+* 
+*	returns:	nothing
+*/
 void load_array(int list[])
 {
 	srand(time(0));
 	for (int x=0; x < SIZE; x++)
 		list[x] = rand()%20 + 1;
 }
-///////////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		Sort array
+*
+*	parameters: an integer array
+*
+*	returns:	nothing
+*/
 void sort_array(int list[])
 {
 	int large, index, temp;
@@ -58,7 +75,14 @@ void sort_array(int list[])
 		display_array(list);
 	}
 }
-///////////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		display array
+*
+*	parameters: a const integer array
+*
+*	returns:	nothing
+*/
 void display_array(const int list[])
 {
 	cout << endl;
@@ -66,7 +90,14 @@ void display_array(const int list[])
 	for (int x=0; x < SIZE; x++)
 		cout << list[x] << ", ";
 }
-///////////////////////////////////////////////////////////////////////////
+
+/**
+*	task:		display frequency of each number
+*
+*	parameters: a const integer array
+*
+*	returns:	nothing
+*/
 void display_frequency(const int list[])
 {
 	int current=list[0], count = 0;

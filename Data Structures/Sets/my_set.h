@@ -141,7 +141,7 @@ bool My_set::erase(int v) {
 		end = nullptr;
 	}
 	else if (it->prev == nullptr) {
-		it->next->prev == nullptr;
+		it->next->prev = nullptr;
 	}
 	else if (it->next == nullptr) {
 		it->prev->next = nullptr;

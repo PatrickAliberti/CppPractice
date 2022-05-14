@@ -44,7 +44,9 @@ List<T>::List(int m) {
 	if (m < 0);
 		max = 0;
 		
-	max = m;
+	else
+		max = m;
+		
 	qty = 0;
 	head = nullptr;
 }

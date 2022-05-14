@@ -10,7 +10,7 @@
 using namespace std;
 
 int main() {
-	stack stack1(100);
+
 	
 	return 0;
 }

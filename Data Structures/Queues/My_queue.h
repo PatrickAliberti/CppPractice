@@ -6,6 +6,9 @@
 	This file contains the node definition, the queue object definition, and the
 	member function definitions for the queue object.
 */
+#include <iostream>
+using namespace std;
+
 struct node {
 	int qty;
 	double price;
@@ -32,7 +35,15 @@ public:
 	
 	double sell(int);
 	bool buy(int, double);
+	
+	void display();
 };
+
+void My_queue::display() {
+	for (node* scan = out; scan != nullptr; scan = scan->next) {
+		cout << scan->price << "   ";
+	}
+}
 
 // Constructors
 My_queue::My_queue(int m) {

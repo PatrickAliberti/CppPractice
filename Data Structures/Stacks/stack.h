@@ -26,7 +26,6 @@ public:
 	
 	int size();
 	int capacity();
-	
 	bool isFull();
 	bool isEmpty();
 	bool push(int);

@@ -16,7 +16,9 @@ int main() {
 	queue1.buy(100, 2.00);
 	
 	cout << "Total selling price: $" << queue1.sell(10) << endl;
-	cout << "Queue size after sell: " << queue1.size();
+	cout << "Queue size after sell: " << queue1.size() << endl;
+	
+	queue1.display();
 	
 	return 0;
 }

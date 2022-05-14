@@ -44,9 +44,7 @@ My_stack::My_stack(int m) {
 }
 
 // Destructor
-My_stack::~My_stack() {
-	clear();
-}
+My_stack::~My_stack() { clear(); }
 
 // Accessors
 int My_stack::capacity() { return max; }

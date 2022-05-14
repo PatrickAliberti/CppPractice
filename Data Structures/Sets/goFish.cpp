@@ -80,7 +80,6 @@ int main() {
 					  << "'s\n\n";
 					  
 			for (int i = 100; i < 401; i += 100) {
-				
 				if (computerHand.erase(card + i))
 					userHand.insert(card + i);
 			}

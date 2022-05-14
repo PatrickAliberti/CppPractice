@@ -7,6 +7,7 @@
 	definition, and the member function definitions for the set object.
 */
 #include <iostream>
+using namespace std;
 
 struct node {
 	node* prev;
@@ -29,6 +30,7 @@ public:
 	
 	int capacity();
 	int size();
+	int peek();
 	int getNumOfFourOfAKinds();
 	node* getEnd();
 	bool isEmpty();
@@ -38,10 +40,6 @@ public:
 	bool erase(int);
 	void removeFourOfAKind();
 	void display();
-	
-	My_set combine(My_set);
-	My_set intersection(My_set);
-	My_set difference(My_set);
 };
 
 // Constructor
@@ -58,6 +56,14 @@ My_set::My_set(int m) {
 int My_set::capacity() { return max; }
 int My_set::size() { return qty; }
 int My_set::getNumOfFourOfAKinds() { return numOfFourOfAKinds; }
+
+int My_set::peek() {
+	if (end == nullptr)
+		return 0;
+		
+	else
+		return end->val;
+}
 
 node* My_set::getEnd() { 
 	it = end;
@@ -158,13 +164,11 @@ bool My_set::erase(int v) {
 	return true;
 }
 
-/**
-	Task:	Remove the four of a kinds from a hand
-	
-	Param:	None
-	
-	Return:	None
-*/
+bool My_set::clear() {
+	while (erase(peek()));
+	return true;
+}
+
 void My_set::removeFourOfAKind() {
 	int ofAKind;
 	for (it = end; it != nullptr; it = it->prev) {
@@ -199,64 +203,4 @@ void My_set::display() {
 		std::cout << it->val % 100 << "\t";
 	}
 	std::cout << "\n" << std::endl;
-}
-
-/**
-	Task:	Returns a new set representing the elements from the first set
-			combined with the second set
-			
-	Param:	The second set
-	
-	Return:	The third set
-*/
-My_set My_set::combine(My_set set2) {
-	My_set set3(set2.capacity() + capacity());
-	for (it = end; it != nullptr; it = it->prev) {
-		set3.insert(it->val);
-	}
-	for (it = set2.getEnd(); it != nullptr; it = it->prev) {
-		set3.insert(it->val);
-	}
-	
-	return set3;
-}
-
-/**
-	Task:	Returns a new set representing the elements in both s1 and s2
-	
-	Param:	The seconds set
-	
-	Return:	The third set
-*/
-My_set My_set::intersection(My_set set2) {
-	My_set set3(set2.capacity() + capacity());
-	for (it = end; it != nullptr; it = it->prev) {
-		if (set2.find(it->val) != nullptr) {
-			set3.insert(it->val);
-		}
-	}
-	
-	return set3;
-}
-
-/**
-	Task:	Returns a new set representing those in the first set after the
-			second set's elements are removed
-			
-	Param:	The second set
-	
-	Return:	The third set
-*/
-My_set My_set::difference(My_set set2) {
-	My_set set3(capacity());
-	for (it = end; it != nullptr; it = it->prev) {
-		set3.insert(it->val);
-	}
-	for (it = end; it != nullptr; it = it->prev) {
-		if (set2.find(it->val) != nullptr) {
-			set3.erase(it->val);
-		}
-	}
-	
-	return set3;
 }

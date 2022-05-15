@@ -47,7 +47,6 @@ public:
 	bool push_back(const int);
 	bool delete_front();
 	bool delete_back();
-	bool insert(const int);
 	bool remove(const int);
 	
 	void display() const;
@@ -98,7 +97,12 @@ bool DLList::isFull() const {
 }
 
 void DLList::clear() {
-	while (delete_front());
+	cout << "yo";
+	while (delete_front()) {
+		cout << "yo";
+	}
+	cout << "yo";
+	
 	return;
 }
 
@@ -126,7 +130,7 @@ bool DLList::push_back(const int v) {
 		
 	Node *temp = new Node(v);
 	
-	if (!head)
+	if (!tail)
 		head = tail = temp;
 		
 	else {
@@ -156,82 +160,69 @@ bool DLList::delete_back() {
 	if (isEmpty())
 		return false;
 		
-	Node *temp = tail;
-	if (head == tail)
-		head = nullptr;
-		
-	tail->next = nullptr;
-	tail = tail->prev;
-	
-	delete temp;
-	qty--;
-	return true;
-}
-
-bool DLList::insert(const int v) {
-	if (isFull())
-		return false;
-	
-	Node *newNode;
-	Node *nodePtr;
-	Node *previousNode = nullptr;
-	
-	newNode = new Node(v);
-	
-	if (!head) {
-		head = newNode;
-		newNode->next = nullptr;
-	}
-	else {
-		previousNode = nullptr;
-		for (nodePtr = head; nodePtr != nullptr && nodePtr->val < v; nodePtr = nodePtr->next) {
-			previousNode = nodePtr;
-		}
-					
-		if (previousNode == nullptr) {
-			head = newNode;
-			newNode->next = nodePtr;
-		}
-		else {
-			previousNode->next = newNode;
-			newNode->next = nodePtr;
-		}
-	}
-	qty++;
-	return true;
+	Node *cur;		
+	if(head == tail) {
+        cur = head;
+        head = nullptr;
+        tail = nullptr;
+    }
+    else {
+        cur = tail;
+        tail = tail->prev;
+        tail->next = nullptr;
+    }
+    delete cur;
+    qty--;
+    return true;
 }
 
 bool DLList::remove(const int v) {
-	Node *nodePtr;
-	Node *previousNode;
-	
-	if (!head)
-		return false;
-		
-	if (head->val == v) {
-		nodePtr = head->next;
-		delete head;
-		head = nodePtr;
-	}
-	else {
-		for (nodePtr = head; nodePtr != nullptr && nodePtr->val != v; nodePtr = nodePtr->next)
-			previousNode = nodePtr;	
-			
-		if (nodePtr) {
-			previousNode->next = nodePtr->next;
-			delete nodePtr;
-		}	
-	}
-	qty--;
-	return true;
+	Node *temp;
+    temp = head;
+    if (head == tail) {
+        if(head->val != v)
+            return false;
+
+        head = nullptr;
+        tail = nullptr;
+        delete temp;
+        return true;
+    }
+    
+    if(head->val == v) {
+        head = head->next;
+        head->prev = nullptr;
+        delete temp;
+        return true;
+    }
+    else if (tail->val == v) {
+        temp = tail;
+        tail = tail->prev;
+        tail->next = nullptr;
+        delete temp;
+        return true;
+    }
+    
+    while (temp->val != v) {
+        temp = temp->next;
+        if (temp == nullptr)
+            return true;
+    }
+    
+    temp->next->prev = temp->prev;
+    temp->prev->next = temp->next;
+    
+    delete temp;
+    return true;
 }
 
 void DLList::display() const {
-	for (Node* scan = head; scan != nullptr; scan = scan->next) {
-		cout << "yuh\n" << scan->val;	
-	}
+	if (isEmpty())
+		return;
 		
-		
+	for (Node* scan = head; scan != nullptr; scan = scan->next)
+		cout << "\n" << scan->val;	
+
 	cout << endl;
 	return;
 }

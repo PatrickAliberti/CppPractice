@@ -4,9 +4,6 @@
 	5/14/2022
 	
 	This file contains the implementation for the doubly linked list data structure
-	
-	TO DO:  - Test/fix delete_back(), insert(), and remove()
-			- change delete to pop
 */
 #ifndef DOUBLYLINKEDLIST_H
 #define DOUBLYLINKEDLIST_H
@@ -45,8 +42,8 @@ public:
 	
 	bool push_front(const int);
 	bool push_back(const int);
-	bool delete_front();
-	bool delete_back();
+	bool pop_front();
+	bool pop_back();
 	bool remove(const int);
 	
 	void display() const;
@@ -97,12 +94,7 @@ bool DLList::isFull() const {
 }
 
 void DLList::clear() {
-	cout << "yo";
-	while (delete_front()) {
-		cout << "yo";
-	}
-	cout << "yo";
-	
+	while (pop_front());	
 	return;
 }
 
@@ -142,7 +134,7 @@ bool DLList::push_back(const int v) {
 	return true;
 }
 
-bool DLList::delete_front() {
+bool DLList::pop_front() {
 	if (isEmpty())
 		return false;
 		
@@ -156,7 +148,7 @@ bool DLList::delete_front() {
 	return true;
 }
 
-bool DLList::delete_back() {
+bool DLList::pop_back() {
 	if (isEmpty())
 		return false;
 		
